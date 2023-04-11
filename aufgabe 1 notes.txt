@@ -29,7 +29,7 @@ The titles.csv contains more than 10k titles, witch 15 columns containing:
 
 id: The title ID on JustWatch.
 title: The name of the title.
-show_type: TV show or movie.
+type: TV show or movie.
 description: A brief description.
 release_year: The release year.
 age_certification: The age certification.
@@ -86,7 +86,7 @@ USE amazon_prime;
 CREATE TABLE titles (
   id INT PRIMARY KEY,
   title VARCHAR(255),
-  show_type VARCHAR(255),
+  type VARCHAR(255),
   description TEXT,
   release_year INT,
   age_certification VARCHAR(255),
@@ -277,7 +277,7 @@ SELECT
 FROM
   titles
 WHERE
-  show_type = 'MOVIE' AND
+  type = 'MOVIE' AND
   release_year BETWEEN 1990 AND 1999
 ORDER BY
   imdb_score DESC,
@@ -293,7 +293,7 @@ SELECT
 FROM
   titles
 WHERE
-  show_type = 'SHOW'
+  type = 'SHOW'
 ORDER BY
   seasons DESC
 LIMIT 10;
@@ -363,7 +363,7 @@ WITH yearly_ratings AS (
   FROM
     titles
   WHERE
-    show_type = 'MOVIE'
+    type = 'MOVIE'
 )
 SELECT
   title,
@@ -389,7 +389,7 @@ WITH score_percentiles AS (
   FROM
     titles
   WHERE
-    show_type = 'MOVIE'
+    type = 'MOVIE'
 )
 SELECT
   title,
@@ -434,7 +434,7 @@ WITH runtime_percentiles AS (
   FROM
     titles
   WHERE
-    show_type = 'MOVIE'
+    type = 'MOVIE'
 )
 SELECT
   title,
