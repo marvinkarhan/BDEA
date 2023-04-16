@@ -9,4 +9,3 @@ services:
       - ./setup.sql:/docker-entrypoint-initdb.d/setup.sql
     ports:
       - "3306:3306"
-    # command: --init-file ./data/application/init.sql
