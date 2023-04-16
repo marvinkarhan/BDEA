@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS movie_tv;
+USE movie_tv;

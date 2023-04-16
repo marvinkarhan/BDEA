@@ -1,0 +1,12 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: movie_tv_db
+    environment:
+      MYSQL_ROOT_PASSWORD: o6&Ufzbe6y6wrWjM
+      MYSQL_DATABASE: movie_tv_db
+    volumes:
+      - ./setup.sql:/docker-entrypoint-initdb.d/setup.sql
+    ports:
+      - "3306:3306"
+    # command: --init-file ./data/application/init.sql
